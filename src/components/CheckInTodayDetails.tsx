@@ -34,7 +34,7 @@ export function CheckInTodayDetails() {
   useEffect(() => {
     async function fetchTodayVehicles() {
       try {
-        const response = await fetch("http://localhost:5000/api/vehicles/today");
+        const response = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/today");
         const data = await response.json();
         setVehicles(data);
       } catch (err) {
