@@ -42,7 +42,7 @@ export function ActiveVehiclesDetails() {
   // Fetch active vehicles
   const fetchActiveVehicles = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/vehicles/active");
+      const response = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/active");
       const data = await response.json();
       setVehicles(data);
     } catch (err) {
@@ -68,7 +68,7 @@ export function ActiveVehiclesDetails() {
   // Handle Checkout
   const handleCheckout = async (vehicleId: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/vehicles/${vehicleId}/checkout`, {
+      const response = await fetch(`https://vehicle-managment-back-end.vercel.app/api/vehicles/${vehicleId}/checkout`, {
         method: 'PUT',
       });
       const data = await response.json();
