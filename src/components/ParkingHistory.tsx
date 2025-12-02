@@ -41,7 +41,7 @@ export function ParkingHistory() {
   // ------------------------------------------------------------
   const fetchVehicles = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/vehicles");
+      const res = await fetch("https://vehicle-managment-back-end.vercel.app");
       const data = await res.json();
 
       if (!Array.isArray(data)) return;
