@@ -32,7 +32,7 @@ export function RevenueDetails() {
   useEffect(() => {
     async function fetchRevenueHistory() {
       try {
-        const response = await fetch("http://localhost:5000/api/vehicles/completed");
+        const response = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/completed");
         const data = await response.json();
         setVehicles(data);
       } catch (err) {
