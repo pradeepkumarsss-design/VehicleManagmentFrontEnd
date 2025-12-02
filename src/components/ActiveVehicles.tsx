@@ -45,7 +45,7 @@ export function ActiveVehicles({ calculateCharge }: ActiveVehiclesProps) {
   // -------------------------------------------------
   const fetchActiveVehicles = async () => {
     try {
-      const res = await fetch(""https://vehicle-managment-back-end.vercel.app/api/vehicles/active");
+      const res = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/active");
       const data = await res.json();
 
       if (!Array.isArray(data)) {
@@ -100,7 +100,7 @@ export function ActiveVehicles({ calculateCharge }: ActiveVehiclesProps) {
   const handleCheckout = async (vehicle: Vehicle) => {
     try {
       const response = await fetch(
-        `"https://vehicle-managment-back-end.vercel.app/api/vehicles/${vehicle._id}/checkout`,
+        `https://vehicle-managment-back-end.vercel.app/api/vehicles/${vehicle._id}/checkout`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
