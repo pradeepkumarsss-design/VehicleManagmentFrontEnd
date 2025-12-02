@@ -43,25 +43,25 @@ export function Dashboard({
   // ------------------------------------------------------
   useEffect(() => {
     async function fetchToday() {
-      const res = await fetch("http://localhost:5000/api/vehicles/today");
+      const res = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/today");
       const data = await res.json();
       setTodayVehicles(data);
     }
 
     async function fetchActive() {
-      const res = await fetch("http://localhost:5000/api/vehicles/active");
+      const res = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/active");
       const data = await res.json();
       setActiveVehicles(data);
     }
 
     async function fetchCompletedToday() {
-      const res = await fetch("http://localhost:5000/api/vehicles/completed-today");
+      const res = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/completed-today");
       const data = await res.json();
       setCompletedToday(data);
     }
 
     async function fetchTotalRevenue() {
-      const res = await fetch("http://localhost:5000/api/vehicles/total-revenue");
+      const res = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/total-revenue");
       const data = await res.json();
       setTotalRevenue(data.totalRevenue || 0);
     }
