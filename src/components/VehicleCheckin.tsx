@@ -82,7 +82,7 @@ export function VehicleCheckin({ onCheckin }: VehicleCheckinProps) {
       // -----------------------------
       // CALL NODE.JS INSERT API
       // -----------------------------
-      const response = await fetch('http://localhost:5000/api/vehicles', {
+      const response = await fetch('https://vehicle-managment-back-end.vercel.app/api/vehicles', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
