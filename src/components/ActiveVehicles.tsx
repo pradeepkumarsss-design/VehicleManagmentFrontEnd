@@ -7,6 +7,7 @@ import { QRScanner } from "./QRScanner";
 import { QRCodePrint } from "./QRCodePrint";
 import { LogOut, Clock, User, Phone, Car, Search, Printer } from "lucide-react";
 import { toast } from "sonner@2.0.3";
+import { log } from "console";
 
 // -------------------
 // Vehicle Interface
@@ -44,6 +45,7 @@ export function ActiveVehicles({ calculateCharge }: ActiveVehiclesProps) {
   // 1️⃣ FETCH ACTIVE VEHICLES FROM BACKEND
   // -------------------------------------------------
   const fetchActiveVehicles = async () => {
+    // TEST
     try {
       const res = await fetch("https://vehicle-managment-back-end.vercel.app/api/vehicles/active");
       const data = await res.json();
