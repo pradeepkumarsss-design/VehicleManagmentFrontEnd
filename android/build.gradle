@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.2'
+        classpath 'com.android.tools.build:gradle:8.6.1'
         classpath 'com.google.gms:google-services:4.4.2'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -21,6 +21,23 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.path == ':capacitor-android') {
+            project.buildDir = new File(rootProject.buildDir, 'capacitor-android')
+        }
+        // Override Java version to match system Java (17)
+        if (project.hasProperty('android')) {
+            project.android {
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
+                }
+            }
+        }
     }
 }
 
